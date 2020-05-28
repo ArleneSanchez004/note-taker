@@ -3,14 +3,20 @@ const storage = require("../db/storage");
 
 //GET 
 router.get("/notes", (req,res) => {
+    console.log(res);
     storage.getNotes()
-        .then(notes => res.json(notes));
+        .then((notes) => res.json(notes)).catch(err => {
+            res.status(500).json(err);
+        })
 });
 
 //POST
 router.post("/notes", (req,res) => {
+    console.log(req.body)
     storage.addNote(req.body)
-        .then((note) => res.json(note));
+        .then((note) => res.json(note)).catch(err => {
+            res.status(500).json(err);
+        })
 });
 
 //DELETE
