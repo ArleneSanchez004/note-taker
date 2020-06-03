@@ -1,6 +1,7 @@
 
 # note-taker
 
+https://arlenesanchez004.github.io/note-taker/
 
 ## Description
 
